@@ -1,4 +1,5 @@
 # Maintainer: Michael Schnerring <3743342+schnerring@users.noreply.github.com>
+# Contributor: Michael Schnerring <3743342+schnerring@users.noreply.github.com>
 
 pkgname=st-schnerring
 _pkgname=st
@@ -8,7 +9,7 @@ pkgdesc="Simple virtual terminal emulator for X. Patched with solarized and othe
 arch=('i686' 'x86_64')
 url='http://st.suckless.org/'
 license=('MIT')
-depends=('libxft' 'libxext' 'xorg-fonts-misc')
+depends=('libxft')
 makedepends=('ncurses' 'git')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")

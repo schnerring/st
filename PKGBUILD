@@ -16,14 +16,17 @@ conflicts=("${_pkgname}")
 options=('zipman')
 
 _patches=('https://st.suckless.org/patches/solarized/st-no_bold_colors-20170623-b331da5.diff'
-          'https://st.suckless.org/patches/solarized/st-solarized-both-20190128-3be4cf1.diff')
+          'https://st.suckless.org/patches/solarized/st-solarized-both-20190128-3be4cf1.diff'
+		  'local://st-monospace-font-20190923-0.8.2.diff')
 
 source=('git://git.suckless.org/st'
         "${_patches[@]}")
 
+
 sha256sums=('SKIP'
             '71e1211189d9e11da93ee49388379c5f8469fcd3e1f48bb4d791ddaf161f5845'
-            '0f47385bef0795c859818d1b88ea826418e62a7b5022dcfe7910c4bab1393faf')
+            '0f47385bef0795c859818d1b88ea826418e62a7b5022dcfe7910c4bab1393faf'
+            '35e322fb029ffecb1beaa929bbfb9f3d2c594368d1235d2f019ed36446d6d10d')
 
 pkgver() {
 	cd "${_pkgname}"

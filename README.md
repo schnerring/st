@@ -1,20 +1,26 @@
 # st
 
-Arch Linux package configuration for [suckless](https://st.suckless.org)' [`simple terminal (st)`](https://st.suckless.org/) with the following patches applied:
+Personalized Arch Linux package configuration for [suckless](https://suckless.org)' [`simple terminal (st)`](https://st.suckless.org/).
+
+## Applied Patches
+
+### Official
+
+The following offical patches from [st.suckless.org/patches](https://st.suckless.org/patches/) were applied.
 
 - [solarized](https://st.suckless.org/patches/solarized/)
   - `st-no_bold_colors`
   - `st-solarized-dark`
 - [boxdraw](https://st.suckless.org/patches/boxdraw/)
 - [anysize](https://st.suckless.org/patches/anysize/)
-- personalized patches
-  - set the default font to `monospace-11`
 
-## Personalized Patches
+## Custom
 
-Descriptions regarding how personalized patches were generated
+Custom patches and information regarding as to how the patches were generated.
 
 ### `st-monospace-font`
+
+This patch assigns the `monospace-11` font as default font. This works best if a `monospace` font is properly configured via [fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/) beforehand.
 
 Clone the `st` repo
 
@@ -23,7 +29,7 @@ Clone the `st` repo
 
 Change font in `config.def.h` to `monospace-11`
 
-    static char *font = "monospace-11:antialias=true:autohint=true";
+    static char *font = "monospace-11";
 
 Generate patch
 

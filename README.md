@@ -1,10 +1,12 @@
 # st
 
-Arch Linux package configuration for [`st`](https://st.suckless.org/) with the following patches applied:
+Arch Linux package configuration for [suckless](https://st.suckless.org)' [`simple terminal (st)`](https://st.suckless.org/) with the following patches applied:
 
 - [solarized](https://st.suckless.org/patches/solarized/)
   - `st-no_bold_colors`
-  - `st-solarized-both`
+  - `st-solarized-dark`
+- [boxdraw](https://st.suckless.org/patches/boxdraw/)
+- [anysize](https://st.suckless.org/patches/anysize/)
 - personalized patches
   - set the default font to `monospace-11`
 

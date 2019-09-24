@@ -1,4 +1,4 @@
-# st
+# simple terminal (st)
 
 Personalized Arch Linux package configuration for [suckless](https://suckless.org)' [`simple terminal (st)`](https://st.suckless.org/).
 
@@ -16,11 +16,13 @@ The following offical patches from [st.suckless.org/patches](https://st.suckless
 
 ## Custom
 
-Custom patches and information regarding as to how the patches were generated.
+Additional information as to how additionally applied, custom patches were generated.
 
 ### `st-monospace-font`
 
 This patch assigns the `monospace-11` font as default font. This works best if a `monospace` font is properly configured via [fontconfig](https://www.freedesktop.org/wiki/Software/fontconfig/) beforehand.
+
+#### Generation
 
 Clone the `st` repo
 

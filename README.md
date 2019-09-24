@@ -1,4 +1,4 @@
-# simple terminal (st)
+# st-arch
 
 Personalized Arch Linux package configuration for [suckless](https://suckless.org)' [`simple terminal (st)`](https://st.suckless.org/).
 

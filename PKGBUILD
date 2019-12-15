@@ -3,7 +3,7 @@
 
 pkgname=st-schnerring
 _pkgname=st
-pkgver=0.8.2.14.g2b8333f
+pkgver=0.8.2.25.g3848301
 pkgrel=1
 pkgdesc="Simple virtual terminal emulator for X. Patched with solarized and other personal stuff."
 arch=('i686' 'x86_64')

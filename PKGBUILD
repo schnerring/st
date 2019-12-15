@@ -2,18 +2,16 @@
 # Contributor: Michael Schnerring <3743342+schnerring@users.noreply.github.com>
 
 pkgname=st-schnerring
-_pkgname=st
-pkgver=0.8.2.25.g3848301
+pkgver=0.8.2.r25.g3848301
 pkgrel=1
 pkgdesc="Simple virtual terminal emulator for X. Patched with solarized and other personal stuff."
 arch=('i686' 'x86_64')
 url='http://st.suckless.org/'
 license=('MIT')
 depends=('libxft')
-makedepends=('ncurses' 'git')
-provides=("${_pkgname}")
-conflicts=("${_pkgname}")
-options=('zipman')
+makedepends=('ncurses' 'libxext' 'git')
+provides=("st")
+conflicts=("st")
 
 _patches=('https://st.suckless.org/patches/solarized/st-no_bold_colors-20170623-b331da5.diff'
           'https://st.suckless.org/patches/solarized/st-solarized-dark-20180411-041912a.diff'
@@ -32,29 +30,30 @@ sha256sums=('SKIP'
             '4da3b17e986ed9394d8056e6ced6b0a8d141a451be1f459c275817f2cd580651')
 
 pkgver() {
-	cd "${_pkgname}"
-	git describe --tags | sed 's/-/./g'
+    cd "${srcdir}/st"
+
+    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
-	cd "$_pkgname"
-
-	sed '/@tic/d' -i Makefile
+    cd "${srcdir}/st"
 
 	for patch in "${_patches[@]}"; do
 		echo "Applying patch $(basename $patch)..."
-		patch -Np1 -i "$srcdir/$(basename $patch)"
+		patch -Np1 < "$srcdir/$(basename $patch)"
 	done
 }
 
 build() {
-	cd "$_pkgname"
+    cd "${srcdir}/st"
+
 	make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
 package() {
-	cd "${_pkgname}"
-	make PREFIX=/usr DESTDIR="${pkgdir}" install
-	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
-	install -Dm644 README "${pkgdir}/usr/share/doc/${_pkgname}/README"
+    cd "${srcdir}/st"
+
+    make PREFIX=/usr DESTDIR="${pkgdir}" TERMINFO="/dev/null" install
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
 }

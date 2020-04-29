@@ -2,7 +2,7 @@
 # Contributor: Michael Schnerring <3743342+schnerring@users.noreply.github.com>
 
 pkgname=st-schnerring
-pkgver=0.8.2.r44.g72e3f6c
+pkgver=0.8.3.r0.g43a395a
 pkgrel=1
 pkgdesc="Simple virtual terminal emulator for X. Patched with solarized and other personal stuff."
 arch=('i686' 'x86_64')
